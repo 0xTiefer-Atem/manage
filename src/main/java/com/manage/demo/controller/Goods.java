@@ -14,7 +14,7 @@ import java.io.IOException;
 
 @RestController
 public class Goods {
-    @RequestMapping(value = "/goods/views",method = RequestMethod.POST)
+    @RequestMapping(value = "/goods",method = RequestMethod.POST)
     public String views(@RequestBody JSONObject json){
         Data d= JSON.parseObject(json.toString(),Data.class);
         Data d2=new Data();
