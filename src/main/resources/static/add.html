@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
+
+</head>
+<body>
+<form>
+    gid:
+    <br>
+    <input type="text" name="gid" id="gid">
+    <br>
+    one:
+    <br>
+    <input type="text" name="one" id="one">
+    <br>
+    two:
+    <br>
+    <input type="text" name="two" id="two">
+    <br>
+    three:
+    <br>
+    <input type="text" name="three" id="three">
+    <br>
+    brand:
+    <br>
+    <input type="text" name="brand" id="brand">
+    <br>
+    title:
+    <br>
+    <input type="text" name="title" id="title">
+    <br>
+    des:
+    <br>
+    <input type="text" name="des" id="des">
+    <br>
+    dis:
+    <br>
+    <input type="text" name="dis" id="dis">
+    <br>
+    price:
+    <br>
+    <input type="text" name="price" id="price">
+    <br>
+    pro:
+    <br>
+    <input type="text" name="pro" id="pro">
+    <br>
+    color:
+    <br>
+    <input type="text" name="color" id="color">
+    <br>
+    size:
+    <br>
+    <input type="text" name="size" id="size">
+    <br>
+    im:
+    <br>
+    <input type="text" name="im" id="im">
+    <br>
+    <br>
+    <input id="button" type="button" value="Submit">
+    <br>
+    <script>
+        // var gid=document.getElementById("gid").value;
+        // var one=document.getElementById("one").value;
+        // var two=document.getElementById("two").value;
+        // var three=document.getElementById("three").value;
+        // var brand=document.getElementById("brand").value;
+        // var title=document.getElementById("title").value;
+        // var des=document.getElementById("des").value;
+        // var dis=document.getElementById("dis").value;
+        // var price=document.getElementById("price").value;
+        // var pro=document.getElementById("pro").value;
+        // var color=document.getElementById("color").value;
+        // var size=document.getElementById("size").value;
+        // var im=document.getElementById("im").value;
+
+        var button=document.getElementById('button');
+        button.onclick=function () {
+            var gid = $('#gid').val();
+            var one = $('#one').val();
+            var two = $('#two').val();
+            var three = $('#three').val();
+            var brand = $('#brand').val();
+            var title = $('#title').val();
+            var des = $('#des').val();
+            var dis = $('#dis').val();
+            var price = $('#price').val();
+            var pro = $('#pro').val();
+            var color = $('#color').val();
+            var size = $('#size').val();
+            var im = $('#im').val();
+
+            var json = '{"gid":"' + gid + '","one":"' + one
+                + '","two":"' + two + '","three":"' + three
+                + '","brand":"' + brand + '","title":"' + title
+                + '","des":"' + des + '","dis":"' + dis
+                + '","pri":"' + price + '","pro":"' + pro
+                + '","col":"' + color + '","size":"' + size
+                + '","im":"' + im + '"}';
+
+            $.ajax({
+                type: "post",
+                url: "/goods/add", //规定把请求发送到哪个 URL。
+                contentType:"application/json;charset=utf-8",
+                data:json,   //规定连同请求发送到服务器的数据。
+                dataType:"json",
+                async: true,
+                success: function (data) {//请求成功时执行的回调函数。
+                    alert(data);
+                },
+                error:function(msg){
+                    alert(msg);
+                }
+            });
+        }
+    </script>
+</form>
+</body>
+</html>

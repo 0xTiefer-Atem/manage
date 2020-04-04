@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.manage.demo.dao.CommodityHomeDao">
+
+    <select id="getUs" resultType="java.lang.Integer">
+        select count(*) from user
+    </select>
+    <select id="getBr" resultType="java.lang.Integer">
+        select count(*) from brand
+    </select>
+    <select id="getWa" resultType="java.lang.Integer">
+        select count(*) from orders where isdelivery='1'
+    </select>
+    <select id="getSs" resultType="java.lang.Integer">
+        select count(*) from orders where order_time
+    </select>
+    <select id="getTo" resultType="java.lang.Integer">
+        select count(*) from user where reg_date = #{reg_date}
+    </select>
+    <select id="getYe" resultType="java.lang.Integer">
+        select count(*) from user where reg_date = #{reg_date}
+    </select>
+    <select id="getTs" resultType="java.lang.Integer">
+        select count(*) from orders where order_time = #{orders_time}
+    </select>
+    <select id="getYs" resultType="java.lang.Integer">
+        select count(*) from orders where order_time = #{orders_time}
+    </select>
+    <select id="getSe" resultType="java.lang.String">
+        select *from orders where actual='1'
+    </select>
+</mapper>

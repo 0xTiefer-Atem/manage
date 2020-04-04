@@ -14,8 +14,8 @@
         $.ajax({
             type: "post",//数据发送的方式（post 或者 get）
             // head: "application/json; charset=UTF-8",
-            url: "/goods/views",//要发送的后台地址
-            data: '{"uid":"xxxxxx"}', //要发送的数据（参数）格式
+            url: "/user/all",//要发送的后台地址
+            data: '{"nm":"xxxxxx","pw":"aaaa"}', //要发送的数据（参数）格式
             dataType: "json",//后台处理后返回的数据格式
             contentType: "application/json; charset=utf-8",
             //  traditional: true,                 //  加上序列化参数
